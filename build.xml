@@ -1,0 +1,22 @@
+<project name="datanucleusenhance" default="datanucleusenhance">
+
+  <property name="sdk.dir" location="???" />
+
+  <import file="${sdk.dir}/config/user/ant-macros.xml" />
+
+  <path id="project.classpath">
+    <pathelement path="war/WEB-INF/classes" />
+    <fileset dir="war/WEB-INF/lib">
+      <include name="**/*.jar" />
+    </fileset>
+    <fileset dir="${sdk.dir}/lib">
+      <include name="shared/**/*.jar" />
+    </fileset>
+  </path>
+
+  <target name="datanucleusenhance"
+      description="Performs enhancement on compiled data classes.">
+    <enhance_war war="war" />
+  </target>
+</project>
+
