@@ -1,7 +1,7 @@
 <project name="myapp" default="datanucleusenhance">
     <property name="sdk.dir" location="????"/>
     <import file="${sdk.dir}/config/user/ant-macros.xml"/>
-    <property name="war.dir" value="target/lift-gae-api-1.0-SNAPSHOT"/>
+    <property name="war.dir" value="target/lift-gae-jpa-1.0-SNAPSHOT"/>
 
     <target name="datanucleusenhance" description="Performs JPA/JDO enhancement on compiled data classes.">
         <enhance_war war="${war.dir}"/>
