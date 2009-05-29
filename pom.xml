@@ -7,7 +7,7 @@
   <name>lift-gae-jpa</name>
   <inceptionYear>2007</inceptionYear>
   <properties>
-    <scala.version>2.7.3</scala.version>
+    <scala.version>2.7.4</scala.version>
   </properties>
 
   <repositories>
@@ -102,8 +102,8 @@
             <version>1.1.0</version>
         </dependency>
     <dependency>
-      <groupId>org.scala-libs</groupId>
-      <artifactId>scalajpa</artifactId>
+      <groupId>net.liftweb</groupId>
+      <artifactId>lift-jpa</artifactId>
       <version>1.1-SNAPSHOT</version>
     </dependency>
     <dependency>
