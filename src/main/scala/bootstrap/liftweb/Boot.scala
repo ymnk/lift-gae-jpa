@@ -37,7 +37,7 @@ import Actor._
 class Boot {
   def boot {
 
-    LiftRules.addToPackages("com.jcrat.lift")
+    LiftRules.addToPackages("com.jcraft.lift")
 
 
     /*
