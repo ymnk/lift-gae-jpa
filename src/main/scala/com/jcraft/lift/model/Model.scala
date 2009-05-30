@@ -17,6 +17,7 @@ package com.jcraft.lift.model
 
 import javax.persistence.Persistence
 
-import org.scala_libs.jpa._
+import _root_.org.scala_libs.jpa.LocalEMF
+import _root_.net.liftweb.jpa.RequestVarEM
 
 object Model extends LocalEMF("transactions-optional") with RequestVarEM

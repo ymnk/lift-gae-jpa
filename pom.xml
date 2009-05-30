@@ -115,6 +115,14 @@
 	  <groupId>javax.transaction</groupId>
 	  <artifactId>jta</artifactId>
 	</exclusion>
+        <exclusion>
+          <groupId>asm</groupId>
+          <artifactId>asm</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>asm-attrs</groupId>
+          <artifactId>asm-attrs</artifactId>
+        </exclusion>
       </exclusions>
     </dependency>
     <!-- for LiftConsole -->
