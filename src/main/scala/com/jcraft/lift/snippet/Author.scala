@@ -68,7 +68,7 @@ class AuthorOps {
     }
 
     def findAuthor(a:Author)={
-       Model.createQuery[Author]("select from net.liftweb.example.model.Author a where a.id = :id").setParameter("id", a.id).findOne
+       Model.createQuery[Author]("select from com.jcraft.lift.model.Author a where a.id = :id").setParameter("id", a.id).findOne
     }
 
     // Hold a val here so that the "id" closure holds it when we re-enter this method
