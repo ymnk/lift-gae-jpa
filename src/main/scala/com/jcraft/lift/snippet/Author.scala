@@ -45,12 +45,9 @@ class AuthorOps {
 
   // Set up a requestVar to track the author object for edits and adds
   object authorVar extends RequestVar(new Author())
-  def author = authorVar.is
+  lazy val author = authorVar.is
 
   def add (xhtml : NodeSeq) : NodeSeq = {
-
-    val currentId = author.id
-
     def doAdd () = {
       if (author.name.length == 0) {
 	error("emptyAuthor", "The author's name cannot be blank")
@@ -67,16 +64,7 @@ class AuthorOps {
       }
     }
 
-    def findAuthor(a:Author)={
-       Model.createQuery[Author]("select from com.jcraft.lift.model.Author a where a.id = :id").setParameter("id", a.id).findOne
-    }
-
-    // Hold a val here so that the "id" closure holds it when we re-enter this method
     bind("author", xhtml,
-	 "id" -> SHtml.hidden(() => 
-                                findAuthor(author) match {
-                                  case Some(a) => authorVar(a)
-                                  case None =>}),
 	 "name" -> SHtml.text(author.name, author.name=_),
 	 "submit" -> SHtml.submit(?("Save"), doAdd))
   }
